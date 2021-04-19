@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Module 5 Harris Dupre</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h2>Module 5 Harris Dupre - Reverse and Multiply</h2>
+		<input type="text" id="word">
+		<button id="reverse" type="button" onclick="rev()"> Reverse </button>
+		<div id="target"></div>
+		<input type="number" id="myNum" value=2>
+		<button id="tableChange" type="button" onclick="updateTable()"> Fill Table </button>		
+		<table id="myTable">
+			<tr><td>2</td><td>4</td><td>6</td><td>8</td></tr>
+			<tr><td>10</td><td>12</td><td>14</td><td>16</td></tr>
+			<tr><td>18</td><td>20</td><td>22</td><td>24</td></tr>
+			<tr><td>26</td><td>28</td><td>30</td><td>32</td></tr>
+			<tr><td>34</td><td>36</td><td>38</td><td>40</td></tr>
+		</table>
+
+
+		
+		<script type="text/javascript">
+			function rev() {
+				var userInput = document.getElementById("word");
+				var result = userInput.value;
+				var splitString = result.split("");
+				var reverseArray = splitString.reverse();
+				var joinArray = reverseArray.join("");
+				var t = document.getElementById("target");
+				t.innerHTML = joinArray
+			}
+			
+			function updateTable() {
+				var myTable = document.getElementById("myTable");
+				var userNum = document.getElementById("myNum").value;
+				var counter = 1;
+				for(i=0; i<=4; i++) {
+					for(j=0;j<=3;j++) {
+						myTable.rows[i].cells[j].innerHTML = userNum*counter;
+						counter++;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
